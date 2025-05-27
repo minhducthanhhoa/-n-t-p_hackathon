@@ -1,0 +1,19 @@
+create database on_tap;
+use on_tap;
+
+CREATE TABLE Product (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(150) NOT NULL UNIQUE,
+    price INT,
+    description TEXT,
+    image VARCHAR(200),
+    status ENUM('AVAILABLE', 'NOT_AVAILABLE') NOT NULL,
+    created_at DATETIME NOT NULL
+);
+
+INSERT INTO Product (product_name, price, description, image, status, created_at) VALUES
+                    ('iPhone 15', 30000, 'New iPhone 15', 'iphone.jpg', 'AVAILABLE', NOW()),
+                    ('Samsung S23', 25000, 'Samsung flagship', 'samsung.jpg', 'AVAILABLE', NOW()),
+                    ('Macbook Pro', 50000, 'M3 Chip Laptop', 'macbook.jpg', 'AVAILABLE', NOW()),
+                    ('Xiaomi Redmi', 15000, 'Budget phone', 'xiaomi.jpg', 'NOT_AVAILABLE', NOW()),
+                    ('iPad Air', 28000, 'Lightweight tablet', 'ipad.jpg', 'AVAILABLE', NOW());
